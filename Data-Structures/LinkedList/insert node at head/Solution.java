@@ -16,11 +16,15 @@ Return a reference to the new head of the list. The head pointer given may be nu
      *
      */
 
-    static void printLinkedList(SinglyLinkedListNode head) {
-        while(head != null){
-            System.out.println(head.data);
-            head = head.next;
-        }
+    static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
+        SinglyLinkedListNode head = llist;
+        SinglyLinkedListNode node = new SinglyLinkedListNode(data);
+        
+        node.next = head;
+
+        head = node;
+
+        return head;
     }
     
 // Time Complexity - O(n)
